@@ -11,6 +11,16 @@ import time
 
 
 class LoadingBar:
+    """A basic loading bar for the terminal.
+
+    Parameters:
+
+    on_emoji(str) : The emoji sr string to show a completed part of the bar
+    off_emoji(str) : The emoji to show a non-completed part of the bar
+    capacity(int) : The total length of the bar
+    isPercentage(bool) : True if the status shoudl be represented in percentage format, else in fraction format
+    """
+
     def __init__(
         self, on_emoji: str, off_emoji: str, capacity: int, isPercentage: bool = False
     ):
@@ -22,11 +32,21 @@ class LoadingBar:
     def print_bar(
         self,
         value: int,
-        prefix: str,
+        prefix: str = "",
         suffix: str = "",
         display_status=True,
         end=False,
     ):
+        """
+        Prints out the loading bar
+
+        Parameters:
+
+        value(int) : The number specifying how much of the bar is complete e.g. 5
+        prefix(str) : A message to come before the loading bar
+        display_status(bool) : Whether to display the status
+        end(bool) : This is to state whether the loading bar will end or not
+        """
         output = ""
         status = ""
         if value > self.capacity:
