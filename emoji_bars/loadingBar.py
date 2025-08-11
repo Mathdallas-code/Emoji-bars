@@ -22,7 +22,11 @@ class LoadingBar:
     """
 
     def __init__(
-        self, on_emoji: str, off_emoji: str, capacity: int, isPercentage: bool = False
+        self,
+        capacity: int,
+        on_emoji: str = "█",
+        off_emoji: str = "▒",
+        isPercentage: bool = False,
     ):
         self.on_emoji = on_emoji
         self.off_emoji = off_emoji
@@ -52,8 +56,9 @@ class LoadingBar:
         if value > self.capacity:
             warnings.warn("value must be smaller than total capacity")
         else:
-            for i in range(0, self.capacity):
-                if i < value:
+            for i in range(0, 20):
+                # CHANGE THIS
+                if i < (value / self.capacity) * 20:
                     output = output + self.on_emoji
                 else:
                     output = output + self.off_emoji
@@ -85,7 +90,7 @@ class LoadingBar:
 
 
 if __name__ == "__main__":
-    testBar = LoadingBar("█", "▒", 10)
+    testBar = LoadingBar(10)
     for i in range(0, testBar.capacity + 1):
         testBar.print_bar(i, "Loading:")
         time.sleep(0.5)
