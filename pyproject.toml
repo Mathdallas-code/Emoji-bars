@@ -9,7 +9,6 @@ readme = "README.md"
 requires-python = ">=3.7"
 license = { file = "LICENSE" }
 keywords = ["emoji", "progress bar", "visualization", "terminal"]
-
 [project.urls]
 Homepage = "https://github.com/Mathdallas-code/Emoji-Bars"
 Repository = "https://github.com/Mathdallas-code/Emoji-Bars"
