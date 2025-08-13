@@ -1,5 +1,5 @@
-from emoji_bars.loadingBar import LoadingBar
 import time
+from emoji_bars.loading_bar import LoadingBar
 
 testBar = LoadingBar(10)
 for i in range(0, testBar.capacity):

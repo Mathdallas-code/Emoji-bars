@@ -1,13 +1,14 @@
-# This contains the main code
+"""
+The module for creating a loading bar in the terminal using emojis.
+"""
+
+import warnings
 
 # These are just for the nice terminal colour
 GREEN = "\033[32m"
 RED = "\033[31m"
 
 RESET = "\033[0m"  # Resets to default terminal color
-
-import warnings
-import time
 
 
 class LoadingBar:
@@ -18,7 +19,7 @@ class LoadingBar:
     on_emoji(str) : The emoji sr string to show a completed part of the bar
     off_emoji(str) : The emoji to show a non-completed part of the bar
     capacity(int) : The total length of the bar
-    isPercentage(bool) : True if the status shoudl be represented in percentage format, else in fraction format
+    isPercentage(bool) : True if the status should be represented in percentage format, else in fraction format
     """
 
     def __init__(
@@ -26,12 +27,12 @@ class LoadingBar:
         capacity: int,
         on_emoji: str = "█",
         off_emoji: str = "▒",
-        isPercentage: bool = False,
+        is_percentage: bool = False,
     ):
         self.on_emoji = on_emoji
         self.off_emoji = off_emoji
         self.capacity = capacity
-        self.isPercentage = isPercentage
+        self.is_percentage = is_percentage
         self.value = 0
 
     def incrememt_bar(self, prefix: str = "", suffix: str = "", display_status=True):
@@ -58,7 +59,7 @@ class LoadingBar:
                 else:
                     output = output + self.off_emoji
 
-        if self.isPercentage:
+        if self.is_percentage:
             status = round(self.value / self.capacity * 100)
             if not self.value >= self.capacity:
                 print(
