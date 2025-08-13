@@ -11,6 +11,7 @@ RED = "\033[31m"
 RESET = "\033[0m"  # Resets to default terminal color
 
 
+# The base class for the loading bar
 class LoadingBar:
     """A basic loading bar for the terminal.
 

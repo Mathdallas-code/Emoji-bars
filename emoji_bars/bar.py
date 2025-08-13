@@ -1,3 +1,8 @@
+"""
+Module for printing rows of emojs, use get_bar(emoji, length) to reutrn a string
+"""
+
+
 def get_bar(emoji: str, length: int):
     """
     Prints out a row of emojis
