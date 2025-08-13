@@ -1,6 +1,6 @@
 [project]
 name = "emoji_bars"
-version = "2.0.1"
+version = "2.1.0"
 description = "A Python module for creating emoji-based progress bars."
 authors = [
     { name = "Mathdallas", email = "jaimorampudi164@gmail.com" }
